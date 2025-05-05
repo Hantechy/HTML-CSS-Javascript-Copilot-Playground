@@ -1,3 +1,91 @@
-test....
-<!-- add an image -->
-<img src="images/test.png" alt="image" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tres Leches Cake with Lemon Curd</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script src="script.js"></script
+<body>
+  <header>
+    <h1>Tres Leches Cake with Lemon Curd</h1>
+    <p>A modern twist on a traditional favorite – soft, soaked sponge layered with zesty lemon curd and Chantilly cream.</p>
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <img src="images/cake.jpg" alt="Tres Leches Cake" class="carousel-img active" />
+    <img src="images/cake22.jpg" alt="Lemon Curd Center" class="carousel-img" />
+    <img src="images/cakie.jpg" alt="Cake Slice Close-up" class="carousel-img" />
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
+
+  <main class="container">
+    <!-- Ingredients Section -->
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      <ul>
+        <li>1 cup cake flour</li>
+        <li>1 ½ tsp baking powder</li>
+        <li>5 eggs, separated</li>
+        <li>1 cup sugar (divided)</li>
+        <li>⅓ cup whole milk</li>
+        <li>2 tsp vanilla bean paste</li>
+        <li>Zest of 1 lemon</li>
+        <li>1 can evaporated milk</li>
+        <li>1 can condensed milk</li>
+        <li>¾ cup heavy cream</li>
+        <li>2 tbsp fresh lemon juice</li>
+        <li>Lemon curd (homemade or store-bought)</li>
+        <li>2 cups heavy cream (for whipped topping)</li>
+        <li>¼ cup powdered sugar</li>
+      </ul>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="instructions">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Preheat oven to 350°F and prepare a lined baking pan.</li>
+        <li>Beat egg yolks with ¾ cup sugar until pale. Stir in milk, vanilla, and lemon zest.</li>
+        <li>Fold in flour mixture. Whip egg whites with remaining sugar and fold into batter.</li>
+        <li>Bake 25–30 minutes. Cool, then poke holes for soaking.</li>
+        <li>Combine three milks with lemon juice and vanilla. Pour over cake.</li>
+        <li>Spread lemon curd on top once cooled.</li>
+        <li>Whip cream with powdered sugar and spread over the top.</li>
+        <li>Garnish with fruit or edible flowers. Chill before serving.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tres Leches Moderno</p>
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    const imgs = document.querySelectorAll(".carousel-img");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    let index = 0;
+
+    function showImage(idx) {
+      imgs.forEach((img, i) => {
+        img.classList.toggle("active", i === idx);
+      });
+    }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % imgs.length;
+      showImage(index);
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + imgs.length) % imgs.length;
+      showImage(index);
+    });
+  </script>
+</body>
+</html>
